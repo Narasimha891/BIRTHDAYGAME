@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>For Maya ✨</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================================= -->
+    <!-- ===================== PAGE 1 ==================== -->
+    <!-- ================================================= -->
+
+    <section id="page1" class="page active">
+
+        <p class="small-text">
+            A LITTLE SOMETHING FOR YOU
+        </p>
+
+
+        <h1 class="intro-title">
+
+            Something special<br>
+            is waiting for you...
+
+        </h1>
+
+
+        <p class="subtitle">
+
+            Take a moment.
+            There's a little surprise ahead.
+
+        </p>
+
+
+        <button
+            class="main-button"
+            onclick="showPage(2)">
+
+            DISCOVER YOUR SURPRISE ✨
+
+        </button>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- ===================== PAGE 2 ==================== -->
+    <!-- ================================================= -->
+
+    <section id="page2" class="page">
+
+
+        <!-- Birthday button -->
+
+        <div id="birthdayReveal">
+
+            <p class="small-text">
+
+                JUST ONE LITTLE CLICK
+
+            </p>
+
+
+            <div class="wish-box">
+
+                <p>
+
+                    Click here and let me make<br>
+                    a birthday wish for you. ✨
+
+                </p>
+
+
+                <button
+                    class="wish-button"
+                    onclick="celebrate()">
+
+                    MAKE MY WISH 🎁
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Birthday message -->
+
+        <div
+            id="birthdayMessage"
+            class="birthday-message">
+
+
+            <p class="small-text">
+
+                TODAY IS YOUR DAY
+
+            </p>
+
+
+            <h1>
+
+                Happy Birthday,<br>
+                Maya! 🎂
+
+            </h1>
+
+
+            <p class="birthday-subtitle">
+
+                Wishing you a day filled with happiness,
+                beautiful moments and plenty of reasons
+                to smile. ❤️
+
+            </p>
+
+
+            <button
+                class="main-button"
+                onclick="showPage(3)">
+
+                SOMETHING ABOUT YOU →
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- ===================== PAGE 3 ==================== -->
+    <!-- ================================================= -->
+
+    <!-- ===================== PAGE 3 ==================== -->
+
+<section id="page3" class="page">
+
+    <p class="small-text">
+        A FEW THINGS ABOUT YOU
+    </p>
+
+    <h2>
+        A little something about you. ✨
+    </h2>
+
+    <p class="flip-instruction">
+        Pick a number and discover what's behind it.
+    </p>
+
+
+    <div class="flip-cards-container">
+
+
+        <!-- CARD 1 -->
+
+        <div class="flip-card" onclick="flipCard(this)">
+
+            <div class="flip-card-inner">
+
+                <!-- FRONT -->
+
+                <div class="flip-card-front">
+
+                    <span>1</span>
+
+                </div>
+
+
+                <!-- BACK -->
+
+                <div class="flip-card-back">
+
+                    <div class="back-icon">
+                        🗣️
+                    </div>
+
+                    <h3>
+                        Talkative
+                    </h3>
+
+                    <p>
+                        There is always something
+                        to talk about. And somehow,
+                        the conversations never feel boring.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 2 -->
+
+        <div class="flip-card" onclick="flipCard(this)">
+
+            <div class="flip-card-inner">
+
+                <div class="flip-card-front">
+
+                    <span>2</span>
+
+                </div>
+
+
+                <div class="flip-card-back">
+
+                    <div class="back-icon">
+                        🫶
+                    </div>
+
+                    <h3>
+                        Easy to Talk To
+                    </h3>
+
+                    <p>
+                        Some people make conversations
+                        feel natural. You're definitely
+                        one of them.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 3 -->
+
+        <div class="flip-card" onclick="flipCard(this)">
+
+            <div class="flip-card-inner">
+
+                <div class="flip-card-front">
+
+                    <span>3</span>
+
+                </div>
+
+
+                <div class="flip-card-back">
+
+                    <div class="back-icon">
+                        ✨
+                    </div>
+
+                    <h3>
+                        Good Energy
+                    </h3>
+
+                    <p>
+                        You have a way of making things
+                        feel a little lighter and
+                        more comfortable.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 4 -->
+
+        <div class="flip-card" onclick="flipCard(this)">
+
+            <div class="flip-card-inner">
+
+                <div class="flip-card-front">
+
+                    <span>4</span>
+
+                </div>
+
+
+                <div class="flip-card-back">
+
+                    <div class="back-icon">
+                        💫
+                    </div>
+
+                    <h3>
+                        Special in Your Own Way
+                    </h3>
+
+                    <p>
+                        No big explanation needed.
+                        You're simply someone
+                        worth appreciating.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 5 -->
+
+        <div class="flip-card" onclick="flipCard(this)">
+
+            <div class="flip-card-inner">
+
+                <div class="flip-card-front">
+
+                    <span>5</span>
+
+                </div>
+
+
+                <div class="flip-card-back">
+
+                    <div class="back-icon">
+                        🫶
+                    </div>
+
+                    <h3>
+                        A Good Friend
+                    </h3>
+
+                    <p>
+                        Some people just make being
+                        friends feel easy. You're one
+                        of those people.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <p class="final-line">
+        Open them all if you're curious. ❤️
+    </p>
+
+
+    <button
+        class="main-button"
+        onclick="showPage(4)">
+
+        ONE LAST SURPRISE →
+
+    </button>
+
+</section>
+
+
+    <!-- ================================================= -->
+    <!-- ===================== PAGE 4 ==================== -->
+    <!-- ================================================= -->
+
+    <section
+        id="page4"
+        class="page scratch-page">
+
+
+        <p class="small-text">
+
+            ONE LAST LITTLE SURPRISE
+
+        </p>
+
+
+        <h2 class="scratch-title">
+
+            Scratch To Reveal ✨
+
+        </h2>
+
+
+        <p class="scratch-instruction">
+
+            Use your finger or mouse
+            to reveal the message.
+
+        </p>
+
+
+
+        <!-- ================= SCRATCH CARD ================= -->
+
+        <div class="scratch-card">
+
+
+            <!-- Hidden message -->
+
+            <div class="secret-message">
+
+
+                <p>
+
+                    You have a way of making
+                    ordinary conversations
+                    feel special.
+
+                </p>
+
+
+                <p>
+
+                    I hope this year brings you
+                    beautiful moments, genuine
+                    happiness, and plenty of
+                    reasons to smile.
+
+                </p>
+
+
+                <strong>
+
+                    Happy Birthday, Maya. ❤️
+
+                </strong>
+
+
+            </div>
+
+
+
+            <!-- Scratch surface -->
+
+            <canvas id="scratchCanvas"></canvas>
+
+
+        </div>
+
+
+
+        <p class="scratch-hint">
+
+            Keep scratching until
+            the message is revealed ✨
+
+        </p>
+
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- ================= JAVASCRIPT ==================== -->
+    <!-- ================================================= -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

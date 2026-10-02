@@ -1,0 +1,1055 @@
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(142, 45, 226, 0.18),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 70, 150, 0.14),
+            transparent 35%
+        ),
+        #080812;
+
+    color: white;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   ANIMATED BACKGROUND
+   ========================================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 550px;
+    height: 550px;
+
+    top: -250px;
+    left: -180px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 70, 150, 0.18),
+            transparent 70%
+        );
+
+    filter: blur(30px);
+
+    animation:
+        backgroundMove 9s ease-in-out infinite alternate;
+
+    pointer-events: none;
+
+    z-index: -2;
+}
+
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 600px;
+    height: 600px;
+
+    right: -250px;
+    bottom: -250px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(100, 70, 255, 0.18),
+            transparent 70%
+        );
+
+    filter: blur(35px);
+
+    animation:
+        backgroundMoveTwo 11s ease-in-out infinite alternate;
+
+    pointer-events: none;
+
+    z-index: -2;
+}
+
+
+@keyframes backgroundMove {
+
+    from {
+        transform:
+            translate(0, 0)
+            scale(1);
+    }
+
+    to {
+        transform:
+            translate(180px, 130px)
+            scale(1.15);
+    }
+}
+
+
+@keyframes backgroundMoveTwo {
+
+    from {
+        transform:
+            translate(0, 0)
+            scale(1);
+    }
+
+    to {
+        transform:
+            translate(-170px, -120px)
+            scale(1.15);
+    }
+}
+
+
+/* =========================================================
+   PAGE SYSTEM
+   ========================================================= */
+
+.page {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        scale(0.97)
+        translateY(15px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        visibility 0.7s ease;
+}
+
+
+.page.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        scale(1)
+        translateY(0);
+}
+
+
+/* =========================================================
+   TEXT
+   ========================================================= */
+
+.small-text {
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    color: #999;
+
+    margin-bottom: 28px;
+
+    animation:
+        fadeUp 1s ease;
+}
+
+
+h1 {
+    font-size:
+        clamp(45px, 8vw, 85px);
+
+    line-height: 1.05;
+
+    font-weight: 500;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+}
+
+
+.intro-title {
+    animation:
+        titleAppear 1.2s ease;
+}
+
+
+.subtitle {
+    color: #999;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    margin-bottom: 40px;
+
+    animation:
+        fadeUp 1.5s ease;
+}
+
+
+h2 {
+    font-size:
+        clamp(30px, 5vw, 48px);
+
+    line-height: 1.2;
+
+    font-weight: 400;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button {
+    background:
+        rgba(255,255,255,0.02);
+
+    color: white;
+
+    border:
+        1px solid #555;
+
+    padding:
+        14px 28px;
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        2px;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+button:hover {
+    border-color:
+        white;
+
+    background:
+        rgba(255,255,255,0.07);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 8px 30px
+        rgba(255,255,255,0.08);
+}
+
+
+button:active {
+    transform:
+        scale(0.96);
+}
+
+
+.main-button {
+    animation:
+        fadeUp 1.8s ease;
+}
+
+
+/* =========================================================
+   PAGE 2 — BIRTHDAY WISH
+   ========================================================= */
+
+.wish-box {
+    width:
+        min(500px, 90vw);
+
+    padding:
+        45px 30px;
+
+    border:
+        1px solid #292934;
+
+    border-radius:
+        20px;
+
+    background:
+        rgba(255,255,255,0.035);
+
+    backdrop-filter:
+        blur(12px);
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,0.2);
+
+    animation:
+        boxAppear 1s ease;
+}
+
+
+.wish-box p {
+    color:
+        #bbb;
+
+    font-size:
+        17px;
+
+    line-height:
+        1.7;
+
+    margin-bottom:
+        30px;
+}
+
+
+.wish-button {
+    padding:
+        16px 35px;
+
+    border-radius:
+        30px;
+}
+
+
+.birthday-message {
+    display:
+        none;
+
+    opacity:
+        0;
+}
+
+
+.birthday-message.show {
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    animation:
+        birthdayAppear 1.2s ease forwards;
+}
+
+
+.birthday-subtitle {
+    max-width:
+        600px;
+
+    color:
+        #aaa;
+
+    font-size:
+        16px;
+
+    line-height:
+        1.7;
+
+    margin-bottom:
+        35px;
+}
+
+
+/* =========================================================
+   PAGE 3 — FLIP CARDS
+   ========================================================= */
+
+.flip-instruction {
+    color:
+        #888;
+
+    font-size:
+        13px;
+
+    margin-top:
+        -10px;
+
+    margin-bottom:
+        30px;
+}
+
+
+/* Container */
+
+.flip-cards-container {
+    width:
+        min(1000px, 94vw);
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    flex-wrap:
+        wrap;
+
+    perspective:
+        1200px;
+}
+
+
+/* Individual card */
+
+.flip-card {
+    width:
+        145px;
+
+    height:
+        100px;
+
+    cursor:
+        pointer;
+
+    perspective:
+        1000px;
+}
+
+
+/* Rotating inner */
+
+.flip-card-inner {
+    position:
+        relative;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    transform-style:
+        preserve-3d;
+
+    transition:
+        transform 0.65s
+        cubic-bezier(.4,.2,.2,1);
+}
+
+
+/* THIS IS THE IMPORTANT PART */
+
+.flip-card.flipped
+.flip-card-inner {
+    transform:
+        rotateY(180deg);
+}
+
+
+/* Front + back */
+
+.flip-card-front,
+.flip-card-back {
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    border-radius:
+        12px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    text-align:
+        center;
+
+    overflow:
+        hidden;
+
+    backface-visibility:
+        hidden;
+
+    -webkit-backface-visibility:
+        hidden;
+}
+
+
+/* ---------- FRONT ---------- */
+
+.flip-card-front {
+    background:
+        linear-gradient(
+            135deg,
+            #ec1260,
+            #a70c4f
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,0.25);
+
+    transition:
+        box-shadow 0.3s ease;
+}
+
+
+.flip-card-front:hover {
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,0.35);
+}
+
+
+.flip-card-front span {
+    font-size:
+        22px;
+
+    font-weight:
+        500;
+
+    color:
+        white;
+}
+
+
+/* ---------- BACK ---------- */
+
+.flip-card-back {
+    background:
+        linear-gradient(
+            135deg,
+            #fffaff,
+            #f7edf7
+        );
+
+    color:
+        #29202d;
+
+    transform:
+        rotateY(180deg);
+
+    padding:
+        15px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.3);
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,0.3);
+}
+
+
+.back-icon {
+    font-size:
+        20px;
+
+    margin-bottom:
+        4px;
+}
+
+
+.flip-card-back h3 {
+    font-size:
+        13px;
+
+    font-weight:
+        600;
+
+    margin-bottom:
+        5px;
+}
+
+
+.flip-card-back p {
+    font-size:
+        9px;
+
+    line-height:
+        1.35;
+
+    color:
+        #625b65;
+}
+
+
+/* Bottom line */
+
+.final-line {
+    color:
+        #888;
+
+    margin-top:
+        20px;
+
+    margin-bottom:
+        20px;
+
+    font-size:
+        14px;
+}
+
+
+/* =========================================================
+   PAGE 4 — SCRATCH CARD
+   ========================================================= */
+
+.scratch-page {
+    gap:
+        0;
+}
+
+
+.scratch-title {
+    font-size:
+        clamp(35px, 6vw, 55px);
+
+    margin-bottom:
+        10px;
+}
+
+
+.scratch-instruction {
+    color:
+        #999;
+
+    font-size:
+        14px;
+
+    margin-bottom:
+        25px;
+}
+
+
+/* Scratch card */
+
+.scratch-card {
+    position:
+        relative;
+
+    width:
+        min(600px, 88vw);
+
+    height:
+        300px;
+
+    border-radius:
+        20px;
+
+    overflow:
+        hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4e9ff,
+            #ffd9ec
+        );
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,0.35);
+}
+
+
+/* Hidden message */
+
+.secret-message {
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    padding:
+        35px;
+
+    text-align:
+        center;
+
+    color:
+        #25202d;
+
+    font-size:
+        16px;
+
+    line-height:
+        1.6;
+}
+
+
+.secret-message p {
+    margin-bottom:
+        15px;
+
+    max-width:
+        500px;
+}
+
+
+.secret-message strong {
+    margin-top:
+        10px;
+
+    font-size:
+        18px;
+
+    color:
+        #6c275f;
+}
+
+
+/* Scratch canvas */
+
+#scratchCanvas {
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    cursor:
+        crosshair;
+
+    touch-action:
+        none;
+}
+
+
+/* Scratch hint */
+
+.scratch-hint {
+    color:
+        #777;
+
+    font-size:
+        12px;
+
+    margin-top:
+        18px;
+
+    letter-spacing:
+        1px;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity:
+            0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes titleAppear {
+
+    from {
+        opacity:
+            0;
+
+        transform:
+            translateY(30px)
+            scale(0.95);
+    }
+
+    to {
+        opacity:
+            1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes boxAppear {
+
+    from {
+        opacity:
+            0;
+
+        transform:
+            scale(0.9);
+    }
+
+    to {
+        opacity:
+            1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+@keyframes birthdayAppear {
+
+    from {
+        opacity:
+            0;
+
+        transform:
+            scale(0.7);
+    }
+
+    to {
+        opacity:
+            1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .page {
+        padding:
+            20px;
+    }
+
+
+    .intro-title {
+        letter-spacing:
+            -1px;
+    }
+
+
+    .subtitle {
+        font-size:
+            15px;
+    }
+
+
+    .wish-box {
+        padding:
+            35px 20px;
+    }
+
+
+    .flip-cards-container {
+        gap:
+            10px;
+
+        max-height:
+            48vh;
+
+        overflow-y:
+            auto;
+
+        padding:
+            5px;
+    }
+
+
+    .flip-card {
+        width:
+            125px;
+
+        height:
+            95px;
+    }
+
+
+    .flip-card-back {
+        padding:
+            12px;
+    }
+
+
+    .flip-card-back h3 {
+        font-size:
+            12px;
+    }
+
+
+    .flip-card-back p {
+        font-size:
+            9px;
+    }
+
+
+    .scratch-card {
+        width:
+            90vw;
+
+        height:
+            280px;
+
+        border-radius:
+            18px;
+    }
+
+
+    .secret-message {
+        padding:
+            25px;
+
+        font-size:
+            14px;
+    }
+
+
+    .secret-message strong {
+        font-size:
+            16px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .small-text {
+        font-size:
+            9px;
+
+        letter-spacing:
+            3px;
+    }
+
+
+    .flip-card {
+        width:
+            110px;
+
+        height:
+            90px;
+    }
+
+
+    .scratch-card {
+        height:
+            260px;
+    }
+
+}
